@@ -539,6 +539,33 @@ h1,h2,h3,h4{
   .product-card[data-flip-card]{ aspect-ratio:3/4.4; }
 }
 
+/* Grid de productos en móvil y iPad: 3 columnas por fila;
+   si sobran productos en la última fila, quedan centrados */
+@media (max-width:1024px){
+  .product-grid{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:1rem;
+  }
+  .product-grid .product-card{
+    flex:0 0 calc(33.333% - .67rem);
+    max-width:calc(33.333% - .67rem);
+  }
+}
+@media (max-width:600px){
+  .product-grid{ gap:.6rem; }
+  .product-grid .product-card{
+    flex-basis:calc(33.333% - .4rem);
+    max-width:calc(33.333% - .4rem);
+  }
+  .product-grid .product-info{ padding:.7rem .6rem .8rem; }
+  .product-grid .product-info h4{ font-size:.78rem; }
+  .product-grid .product-info p{ font-size:.68rem; line-height:1.35; }
+  .product-grid .product-link{ font-size:.58rem; margin-top:.6rem; }
+  .product-grid .product-link svg{ width:10px; height:10px; }
+}
+
 /* =========================================================
    SERVICIOS
    ========================================================= */
